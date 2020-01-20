@@ -9,7 +9,7 @@ import codecs
 
 class DenSpider(CrawlSpider):
     name = 'den'
-    file_name = 'BUSINESS_NAMES_202001.csv'
+    file_name = 'BUSINESS_NAMES_202001_ABN.csv'
     allowed_domains = ['abr.business.gov.au', 'connectonline.asic.gov.au']
     start_urls = []
 
