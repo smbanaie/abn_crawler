@@ -17,10 +17,11 @@ class DenSpider(CrawlSpider):
         f = open(self.file_name,'r')
         next(f)
         for line in f : 
-            abn = line.split('\t')[-1]
-            if (len(abn)>0) : 
-                url = f'https://abr.business.gov.au/ABN/View?id={abn}'
-                yield Request(url=url, callback=self.parse_abn, dont_filter=True)
+            # abn = line.split('\t')[-1]
+            abn = line.strip()
+            # if (len(abn)>0) : 
+            url = f'https://abr.business.gov.au/ABN/View?id={abn}'
+            yield Request(url=url, callback=self.parse_abn, dont_filter=True)
             
     def parse_business_name(self, response):
         try :
